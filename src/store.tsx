@@ -7,10 +7,11 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
     dashboard: AssigmentReducer
 })
+export const middlewares=[sagaMiddleware];
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middlewares)))
 sagaMiddleware.run(watcherSaga);
 export default store;

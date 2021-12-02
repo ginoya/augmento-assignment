@@ -78,11 +78,11 @@ function Assignment() {
                         <div className='stat-text'>Actual Cost</div>
                     </div>
                     <div className='stat-div'>
-                        <div>{overallData?.totalBaselineCost}</div>
+                        <div>${overallData?.totalBaselineCost}</div>
                         <div className='stat-text'>Baseline Cost</div>
                     </div>
                     <div className='stat-div'>
-                        <div>{overallData?.totalCostSavings} 
+                        <div>${overallData?.totalCostSavings} 
                             <span className='green-text'>
                                 <span className="green-dot"></span>
                                 <span>{overallData?.totalCostSavingsPercentage}%</span>
@@ -196,11 +196,14 @@ function Assignment() {
     };
 
     return (
-        <div>
-            <HighchartsReact
+        <div data-test="Assignment-Dashboard">
+            <span className='test'>
+                test
+            </span>
+            {/* <HighchartsReact
                 highcharts={Highcharts}
                 options={options}
-            />
+            /> */}
         </div>
     )
 }
