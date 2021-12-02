@@ -21,6 +21,9 @@ type datapointType = {
     BaselineCost: number[],
     ActualCost: number[]
 }
+type AssigmentProps={
+    store:any;
+}
 function Assignment() {
     const dispatch = useDispatch();
     useEffect(() => {
@@ -28,7 +31,7 @@ function Assignment() {
     }, [])
 
     const state = useSelector((state: any) => state.dashboard?.data?.data);
-    console.log({state});
+    // console.log({state});
     let monthdata = state?.regions[0]?.facilities[0]?.monthwiseAggregations;
     const overallData=state?.regions[0]?.facilities[0]?.totalAggregations;
     let rowData: datapointType = {
@@ -44,7 +47,7 @@ function Assignment() {
         rowData.ActualCost.push(consumtnData.actualCost);
     });
 
-    console.log({ monthdata }, { rowData })
+    // console.log({ monthdata }, { rowData })
 
     const yxisFormating = (value: number) => {
         return value / 1000;
