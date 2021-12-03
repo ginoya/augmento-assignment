@@ -200,13 +200,10 @@ function Assignment() {
 
     return (
         <div data-test="Assignment-Dashboard">
-            <span className='test'>
-                test
-            </span>
-            {/* <HighchartsReact
+            <HighchartsReact
                 highcharts={Highcharts}
                 options={options}
-            /> */}
+            />
         </div>
     )
 }
